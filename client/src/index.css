@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { @apply scroll-smooth; }
+  body {
+    @apply bg-gray-50 text-gray-900 dark:bg-gray-950 dark:text-gray-100 font-sans antialiased;
+  }
+  h1, h2, h3 { @apply font-semibold tracking-tight text-gray-900 dark:text-gray-50; }
+  ::selection { @apply bg-indigo-100 dark:bg-indigo-900/50; }
+}
+
+@layer components {
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center gap-1.5 rounded-lg border border-gray-300 dark:border-gray-700
+           bg-white dark:bg-gray-900 px-3.5 py-2 text-sm font-medium text-gray-700 dark:text-gray-200
+           shadow-sm transition-colors hover:bg-gray-50 dark:hover:bg-gray-800
+           disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap;
+  }
+  .btn-primary {
+    @apply btn border-transparent bg-indigo-600 text-white hover:bg-indigo-500 dark:hover:bg-indigo-500;
+  }
+  .btn-danger {
+    @apply btn border-transparent text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-950/40;
+  }
+  .btn-ghost {
+    @apply btn border-transparent shadow-none hover:bg-gray-100 dark:hover:bg-gray-800;
+  }
+  .btn-sm { @apply px-2.5 py-1.5 text-xs gap-1; }
+  .btn-icon { @apply p-2; }
+
+  /* Surfaces */
+  .card {
+    @apply rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-card;
+  }
+  .panel {
+    @apply rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900;
+  }
+
+  /* Forms */
+  .field-label {
+    @apply block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1.5;
+  }
+  .field-input {
+    @apply block w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900
+           px-3 py-2 text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500
+           shadow-sm transition-shadow
+           focus:border-indigo-500 focus:outline-none focus:ring-4 focus:ring-indigo-500/15;
+  }
+  textarea.field-input { @apply min-h-[88px] resize-y; }
+  .field-hint { @apply text-xs text-gray-500 dark:text-gray-400; }
+  .field-error {
+    @apply flex items-center gap-2 rounded-lg border border-red-200 dark:border-red-900
+           bg-red-50 dark:bg-red-950/40 px-3 py-2 text-sm font-medium text-red-700 dark:text-red-400;
+  }
+
+  /* Badges */
+  .badge {
+    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide;
+  }
+  .badge-draft { @apply badge bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-300; }
+  .badge-published { @apply badge bg-emerald-100 text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-400; }
+  .badge-closed { @apply badge bg-red-100 text-red-700 dark:bg-red-950/60 dark:text-red-400; }
+
+  /* Stat readouts */
+  .stat-value { @apply font-mono text-3xl font-semibold tabular-nums text-gray-900 dark:text-gray-50; }
+  .stat-label { @apply text-[11px] font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400; }
+
+  /* Selectable answer options in the public survey form */
+  .option-tile {
+    @apply flex cursor-pointer items-center gap-3 rounded-lg border border-gray-200 dark:border-gray-700
+           px-3.5 py-2.5 text-sm text-gray-800 dark:text-gray-100 transition-colors
+           hover:border-indigo-300 hover:bg-indigo-50/60 dark:hover:border-indigo-700 dark:hover:bg-indigo-950/30
+           has-[:checked]:border-indigo-500 has-[:checked]:bg-indigo-50 dark:has-[:checked]:bg-indigo-950/40;
+  }
+}
