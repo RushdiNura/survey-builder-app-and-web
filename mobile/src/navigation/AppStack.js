@@ -18,19 +18,52 @@ export default function AppStack() {
         headerShown: true,
         headerShadowVisible: false,
         headerStyle: { backgroundColor: theme.colors.bg },
-        headerTitleStyle: { fontFamily: theme.typography.fontFamily.semibold, color: theme.colors.text, fontSize: 16 },
+        headerTitleStyle: {
+          fontFamily: theme.typography.fontFamily.semibold,
+          color: theme.colors.text,
+          fontSize: 16,
+        },
         headerTintColor: theme.colors.primary,
-        headerBackTitleVisible: false,
+        headerBackButtonDisplayMode: "minimal",
+        // headerBackTitleVisible: false,
         contentStyle: { backgroundColor: theme.colors.bg },
       }}
     >
-      <Stack.Screen name="MainTabs" component={MainTabs} options={{ headerShown: false }} />
-      <Stack.Screen name="SurveyDetail" component={SurveyDetailScreen} options={{ title: "Survey" }} />
-      <Stack.Screen name="CreateSurvey" component={CreateSurveyScreen} options={{ title: "New survey" }} />
-      <Stack.Screen name="EditSurvey" component={CreateSurveyScreen} options={{ title: "Edit survey" }} />
-      <Stack.Screen name="Analytics" component={AnalyticsScreen} options={{ title: "Analytics" }} />
-      <Stack.Screen name="Invite" component={InviteScreen} options={{ title: "Invite by email" }} />
-      <Stack.Screen name="SurveyPreview" component={SurveyPreviewScreen} options={{ title: "Preview" }} />
+      <Stack.Screen
+        name="MainTabs"
+        component={MainTabs}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="SurveyDetail"
+        component={SurveyDetailScreen}
+        options={{ title: "Survey" }}
+      />
+      <Stack.Screen
+        name="CreateSurvey"
+        component={CreateSurveyScreen}
+        options={{ title: "New survey" }}
+      />
+      <Stack.Screen
+        name="EditSurvey"
+        component={CreateSurveyScreen}
+        options={{ title: "Edit survey" }}
+      />
+      <Stack.Screen
+        name="Analytics"
+        component={AnalyticsScreen}
+        options={{ title: "Analytics" }}
+      />
+      <Stack.Screen
+        name="Invite"
+        component={InviteScreen}
+        options={{ title: "Invite by email" }}
+      />
+      <Stack.Screen
+        name="SurveyPreview"
+        component={SurveyPreviewScreen}
+        options={{ title: "Preview" }}
+      />
     </Stack.Navigator>
   );
 }

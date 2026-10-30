@@ -58,7 +58,13 @@ export default function QuestionBuilderCard({ question, index, onChange, onRemov
       showToast("Photo library access is needed to attach an image", "error");
       return;
     }
-    const result = await ImagePicker.launchImageLibraryAsync({ mediaTypes: ImagePicker.MediaTypeOptions.Images, quality: 0.8 });
+    // const result = await ImagePicker.launchImageLibraryAsync({ mediaTypes: ImagePicker.MediaTypeOptions.Images, quality: 0.8 });
+
+    const result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ["images"],
+      quality: 0.8,
+    });
+    
     if (result.canceled) return;
     const asset = result.assets[0];
     setUploading(true);

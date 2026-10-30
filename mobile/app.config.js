@@ -13,15 +13,6 @@ export default ({ config }) => ({
     icon: "./assets/icon.png",
     scheme: "surveybuilder",
     userInterfaceStyle: "automatic",
-    splash: {
-      image: "./assets/splash-icon.png",
-      resizeMode: "contain",
-      backgroundColor: "#F9FAFB",
-      dark: {
-        image: "./assets/splash-icon.png",
-        backgroundColor: "#030712",
-      },
-    },
     assetBundlePatterns: ["**/*"],
     ios: {
       supportsTablet: true,
@@ -29,7 +20,8 @@ export default ({ config }) => ({
       infoPlist: {
         NSPhotoLibraryUsageDescription:
           "Allow photo access to attach images to survey questions or file-upload answers.",
-        NSCameraUsageDescription: "Allow camera access to take a photo for image-based questions.",
+        NSCameraUsageDescription:
+          "Allow camera access to take a photo for image-based questions.",
       },
     },
     android: {
@@ -48,7 +40,20 @@ export default ({ config }) => ({
       [
         "expo-image-picker",
         {
-          photosPermission: "Allow photo access to attach images to survey questions or file-upload answers.",
+          photosPermission:
+            "Allow photo access to attach images to survey questions or file-upload answers.",
+        },
+      ],
+      [
+        "expo-splash-screen",
+        {
+          image: "./assets/splash-icon.png",
+          resizeMode: "contain",
+          backgroundColor: "#F9FAFB",
+          dark: {
+            image: "./assets/splash-icon.png",
+            backgroundColor: "#030712",
+          },
         },
       ],
     ],
